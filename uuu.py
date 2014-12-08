@@ -1,4 +1,5 @@
-def washingmachine(weight_machine, washround, nextround):
+def washingmachine():
+    weight_machine, washround, nextround = input()*1000, 0, 0
     jeans_dark, top_dark, sktr_dark = input(), input(), input()
     jeans_light, top_light, sktr_light = input(), input(), input()
     dark = (jeans_dark*550)+(top_dark*200)+(sktr_dark*300)
@@ -41,4 +42,4 @@ def washingmachine(weight_machine, washround, nextround):
         if light > 0:
             nextround += 1
         print washround, nextround
-washingmachine(input()*1000, 0, 0)
+washingmachine()
