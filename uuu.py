@@ -13,7 +13,7 @@ def washingmachine():
             dark -= weight_machine
         if dark > 0:
             nextround += 1
-        print washround, nextround
+        print 'Washing dark clothes this time ' + str(washround) + ', And Keep to wash next time ' + str(nextround)
         washround = 0
         nextround = 0
         while light > weight_machine:
@@ -24,14 +24,14 @@ def washingmachine():
             light -= weight_machine
         if light > 0:
             nextround += 1
-        print washround, nextround
+        print 'Washing light clothes this time ' + str(washround) + ', And Keep to wash next time ' + str(nextround)
     elif dark > 0 and light == 0:
         while dark > (weight_machine/2):
             washround += 1
             dark -= weight_machine
         if dark > 0:
             nextround += 1
-        print washround, nextround
+        print 'Washing dark clothes this time ' + str(washround) + ', And Keep to wash next time ' + str(nextround)
     elif light > 0 and dark == 0:
         while light > weight_machine:
             washround += 1
@@ -41,5 +41,5 @@ def washingmachine():
             light -= weight_machine
         if light > 0:
             nextround += 1
-        print washround, nextround
+        print 'Washing light clothes this time ' + str(washround) + ', And Keep to wash next time ' + str(nextround)
 washingmachine()
