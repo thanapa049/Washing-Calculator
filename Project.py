@@ -111,10 +111,13 @@ class Application(Frame):
     def about(self):
         toor = Tk()
         toor.title("About")
-        toor.geometry("200x200")
-        self.aboutproject = 'bla bla bla'
-        abouttext = Label(toor, text=self.aboutproject).pack()
-
+        toor.geometry("450x200")
+        self.aboutproject = "\n This application will help you to decide \n if you put the clothes into the washing machine,it is worthwhile or not."
+        self.suggestenter = "This application have 7 inputs are... \n Weight Machine => Capacity of washing machine \n the others is a pieces of dark or light clothes"
+        self.suggestbutton = "And 3 main button are...\n Enter => When you put values and want to calculate \n Reset Values => reset all values \n Exit => Close this application"
+        text1 = Label(toor, text=self.aboutproject).pack()
+        text2 = Label(toor, text=self.suggestenter).pack()
+        text3 = Label(toor, text=self.suggestbutton).pack()
     def menu(self):
         optionmenu = Menu(menubar, tearoff = 0)
         optionmenu.add_command(label = "Reset Value", command = self.setvalue)
