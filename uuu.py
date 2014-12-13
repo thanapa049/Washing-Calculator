@@ -26,6 +26,9 @@ def washingmachine():
             nextround += 1
         print 'Washing light clothes this time ' + str(washround) + ', And Keep to wash next time ' + str(nextround)
     elif dark > 0 and light == 0:
+        while dark > weight_machine:
+            washround += 1
+            dark -= weight_machine
         while dark > (weight_machine/2):
             washround += 1
             dark -= weight_machine
