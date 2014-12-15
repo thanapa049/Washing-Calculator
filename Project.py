@@ -20,6 +20,9 @@ sktrlight = IntVar()
 menubar = Menu(root)
 class Application(Frame):
     def createwidgets(self):
+        self.im = Image.open('washing-machine.jpg')
+        self.tkimage = ImageTk.PhotoImage(self.im)
+        self.bg = Label(root, image = self.tkimage).place(x = 0, y = 0)
         self.L1 = Label(root, text="Weight Machine").pack()
         self.E1 = Entry(root, width = 25, bd = 3, textvariable = weight).pack(expand=YES)
         self.L2 = Label(root, text="Dark Jeans").pack()
@@ -40,6 +43,7 @@ class Application(Frame):
 
     def __init__(self, master = None):
         Frame.__init__(self, master)
+        self.place()
         self.pack()
         self.washingmachine()
         self.createwidgets()
@@ -110,7 +114,7 @@ class Application(Frame):
             tkMessageBox.showinfo("Result", "Washing light clothes this time " + str(self.washround) + ", And keep to wash next time " + str(self.nextround))
     def about(self):
         toor = Tk()
-        toor.title("About")
+        toor.title("Help")
         toor.geometry("450x200")
         self.aboutproject = "\n This application will help you to decide \n if you put the clothes into the washing machine,it is worthwhile or not."
         self.suggestenter = "This application have 7 inputs are... \n Weight Machine => Capacity of washing machine \n the others is a pieces of dark or light clothes"
@@ -121,14 +125,11 @@ class Application(Frame):
     def menu(self):
         optionmenu = Menu(menubar, tearoff = 0)
         optionmenu.add_command(label = "Reset Value", command = self.setvalue)
-
         optionmenu.add_separator()
-
         optionmenu.add_command(label = "Exit", command = root.quit)
         menubar.add_cascade(label = "Option", menu = optionmenu)
-
         helpmenu = Menu(menubar, tearoff = 0)
-        helpmenu.add_command(label = "About...", command = self.about)
+        helpmenu.add_command(label = "Help", command = self.about)
         menubar.add_cascade(label = "Help", menu = helpmenu)
 
 root.config(menu=menubar)
