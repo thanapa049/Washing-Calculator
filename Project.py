@@ -1,15 +1,7 @@
 '''Project'''
 from Tkinter import *
-from PIL import Image, ImageTk
 import tkMessageBox
 root = Tk()
-weight_machine = int()
-jeans_dark = int()
-top_dark = int()
-sktr_dark = int()
-jeans_light = int()
-top_light = int()
-sktr_light = int()
 weight = IntVar()
 jeansdark = IntVar()
 topdark = IntVar()
@@ -17,12 +9,18 @@ sktrdark = IntVar()
 jeanslight = IntVar()
 toplight = IntVar()
 sktrlight = IntVar()
+weight_machine = int()
+jeans_dark = int()
+top_dark = int()
+sktr_dark = int()
+jeans_light = int()
+top_light = int()
+sktr_light = int()
 menubar = Menu(root)
 class Application(Frame):
     def createwidgets(self):
-        self.im = Image.open('washing-machine.jpg')
-        self.tkimage = ImageTk.PhotoImage(self.im)
-        self.bg = Label(root, image = self.tkimage).place(x = 0, y = 0)
+        self.tkimage = PhotoImage(file = 'background.gif')
+        self.bg = Label(root, image = self.tkimage).place(height = 350, width = 250)
         self.L1 = Label(root, text="Weight Machine", bg = 'violet').pack()
         self.E1 = Entry(root, width = 25, bd = 3, textvariable = weight).pack(expand=YES)
         self.L2 = Label(root, text="Dark Jeans", bg = 'dark blue', fg = 'white').pack()
