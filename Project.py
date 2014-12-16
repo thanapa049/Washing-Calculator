@@ -23,22 +23,22 @@ class Application(Frame):
         self.im = Image.open('washing-machine.jpg')
         self.tkimage = ImageTk.PhotoImage(self.im)
         self.bg = Label(root, image = self.tkimage).place(x = 0, y = 0)
-        self.L1 = Label(root, text="Weight Machine").pack()
+        self.L1 = Label(root, text="Weight Machine", bg = 'violet').pack()
         self.E1 = Entry(root, width = 25, bd = 3, textvariable = weight).pack(expand=YES)
-        self.L2 = Label(root, text="Dark Jeans").pack()
+        self.L2 = Label(root, text="Dark Jeans", bg = 'dark blue', fg = 'white').pack()
         self.E2 = Entry(root, width = 25, bd = 3, textvariable = jeansdark).pack(expand=YES)
-        self.L3 = Label(root, text="Dark Tops").pack()
+        self.L3 = Label(root, text="Dark Tops", bg = 'black', fg = 'white').pack()
         self.E3 = Entry(root, width = 25, bd = 3, textvariable = topdark).pack(expand=YES)
-        self.L4 = Label(root, text="Dark Skirt/Trousers").pack()
+        self.L4 = Label(root, text="Dark Skirt/Trousers", bg = 'gray', fg = 'white').pack()
         self.E4 = Entry(root, width = 25, bd = 3, textvariable = sktrdark).pack(expand=YES)
-        self.L5 = Label(root, text="Light Jeans").pack()
+        self.L5 = Label(root, text="Light Jeans", bg = 'light blue').pack()
         self.E5 = Entry(root, width = 25, bd = 3, textvariable = jeanslight).pack(expand=YES)
-        self.L6 = Label(root, text="Light Tops").pack()
+        self.L6 = Label(root, text="Light Tops", bg = 'light pink', fg = 'white').pack()
         self.E6 = Entry(root, width = 25, bd = 3, textvariable = toplight).pack(expand=YES)
-        self.L7 = Label(root, text="Light Skirt/Trousers").pack()
+        self.L7 = Label(root, text="Light Skirt/Trousers", bg = 'light yellow').pack()
         self.E7 = Entry(root, width = 25, bd = 3, textvariable = sktrlight).pack(expand=YES)
         enterbox = Button(root, text = "Enter", bg = "green", command = self.washingmachine).pack(side=LEFT, expand=YES)
-        setbox = Button(root, text = "Reset Value!", bg = "orange", command = self.setvalue).pack(side=LEFT, expand=YES)
+        setbox = Button(root, text = "Reset Value!", bg = "dark orange", command = self.setvalue).pack(side=LEFT, expand=YES)
         quitbox = Button(root, text = "Exit", bg = "red", command = root.quit).pack(side=LEFT, expand=YES)
 
     def __init__(self, master = None):
@@ -112,10 +112,11 @@ class Application(Frame):
             if self.light > 0:
                 self.nextround += 1
             tkMessageBox.showinfo("Result", "Washing light clothes this time " + str(self.washround) + ", And keep to wash next time " + str(self.nextround))
-    def about(self):
+    def help(self):
         toor = Tk()
         toor.title("Help")
         toor.geometry("450x200")
+        toor.resizable(width=FALSE, height=FALSE)
         self.aboutproject = "\n This application will help you to decide \n if you put the clothes into the washing machine,it is worthwhile or not."
         self.suggestenter = "This application have 7 inputs are... \n Weight Machine => Capacity of washing machine \n the others is a pieces of dark or light clothes"
         self.suggestbutton = "And 3 main button are...\n Enter => When you put values and want to calculate \n Reset Values => reset all values \n Exit => Close this application"
@@ -129,12 +130,13 @@ class Application(Frame):
         optionmenu.add_command(label = "Exit", command = root.quit)
         menubar.add_cascade(label = "Option", menu = optionmenu)
         helpmenu = Menu(menubar, tearoff = 0)
-        helpmenu.add_command(label = "Help", command = self.about)
+        helpmenu.add_command(label = "Help", command = self.help)
         menubar.add_cascade(label = "Help", menu = helpmenu)
 
 root.config(menu=menubar)
 root.title("Washing Machine")
 root.geometry("250x350")
+root.resizable(width=FALSE, height=FALSE)
 app = Application(master = root)
 root.mainloop()
 root.destroy()
