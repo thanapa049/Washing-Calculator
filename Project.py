@@ -113,11 +113,13 @@ class Application(Frame):
     def help(self):
         toor = Tk()
         toor.title("Help")
-        toor.geometry("450x200")
+        toor.geometry("450x270")
         toor.resizable(width=FALSE, height=FALSE)
         self.aboutproject = "\n This application will help you to decide \n if you put the clothes into the washing machine,it is worthwhile or not."
-        self.suggestenter = "This application have 7 inputs are... \n Weight Machine => Capacity of washing machine \n the others is a pieces of dark or light clothes"
-        self.suggestbutton = "And 3 main button are...\n Enter => When you put values and want to calculate \n Reset Values => reset all values \n Exit => Close this application"
+        self.suggestenter = "This application have 7 inputs are... \n Weight Machine => Capacity of washing machine (input -> integer) \n Dark Jeans => Piece of dark jeans (input -> integer)" +\
+                            "\n Dark Tops => Piece of dark tops (input -> integer) \n Dark Skirt/Trousers => Piece of dark skirts or trousers (input -> integer) \n Light Jeans => Piece of light jeans (input -> integer)" +\
+                            "\nLight Tops => Piece of light tops (input -> integer) \n Light Skirt/Trousers  => Piece of light skirts or trousers (input -> integer)"
+        self.suggestbutton = "And 3 main buttons are...\n Enter => When you put values and want to calculate \n Reset Values => reset all values \n Exit => Close this application"
         text1 = Label(toor, text=self.aboutproject).pack()
         text2 = Label(toor, text=self.suggestenter).pack()
         text3 = Label(toor, text=self.suggestbutton).pack()
