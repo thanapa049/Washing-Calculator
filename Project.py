@@ -134,7 +134,7 @@ class Application(Frame):
         menubar.add_cascade(label = "Help", menu = helpmenu)
 
 root.config(menu=menubar)
-root.title("Washing Machine")
+root.title("Washing Calculator")
 root.geometry("250x350")
 root.resizable(width=FALSE, height=FALSE)
 app = Application(master = root)
